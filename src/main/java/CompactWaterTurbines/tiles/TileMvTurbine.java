@@ -18,16 +18,17 @@ public class TileMvTurbine extends TileEntity implements IWrenchable, IEnergyTil
 
 	public BasicSource energy;
 	public Inventory inventory = new Inventory(1, "TileMvTurbine", 64);
-	public static int euTick = 64;
+	public static int euTick = 128;
 	public static int neededbuckets = 64;
 	private boolean initialized;
+	public static int euTeir = 2;
 	public boolean hasWater = false;
 	public static int euPerBucket = 32000;
 	int currentBuckets;
 
 
 	public TileMvTurbine() {
-		energy = new BasicSource(this, euPerBucket, 2);
+		energy = new BasicSource(this, euPerBucket, euTeir);
 	}
 
 	@Override
